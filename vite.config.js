@@ -11,7 +11,7 @@ export default defineConfig({
   optimizeDeps: {
     esbuildOptions: {
       plugins: [
-        esbuildCommonjs(['vite-dev-demo-sheldon'])
+        // esbuildCommonjs(['vite-dev-demo-sheldon'])
       ]
     }
   },
@@ -19,8 +19,9 @@ export default defineConfig({
     // reactRefresh({
     //   include: 'src/*.tsx',
     // }),
-    viteCommonjs({
-      exclude: ['vite-dev-demo-sheldon'],
-    }),
+    viteCommonjs(),
+    // viteCommonjs({
+    //   exclude: ['vite-dev-demo-sheldon'],
+    // }),
   ]
 })

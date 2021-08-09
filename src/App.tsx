@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import { img, test } from 'vite-dev-demo-sheldon'
 import logo from './logo.svg'
 import './App.css'
+// import Search from '@material-ui/icons/Search'
 
-console.log(img, test)
-
+const Search =  React.lazy(() => import('@material-ui/icons/Search'))
 function App() {
   const [count, setCount] = useState(0)
+  console.log(Search, 'Search')
 
   return (
     <div className="App">
@@ -42,6 +43,9 @@ function App() {
         </p>
       </header>
       <img src={img} />
+      <Suspense fallback=''>
+        <Search />
+      </Suspense>
     </div>
   )
 }
