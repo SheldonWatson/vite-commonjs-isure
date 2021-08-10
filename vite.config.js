@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-// import reactRefresh from '@vitejs/plugin-react-refresh'
+import reactRefresh from '@vitejs/plugin-react-refresh'
 import { esbuildCommonjs, viteCommonjs } from '@originjs/vite-plugin-commonjs'
 
 // https://vitejs.dev/config/
@@ -16,12 +16,11 @@ export default defineConfig({
     }
   },
   plugins: [
-    // reactRefresh({
-    //   include: 'src/*.tsx',
-    // }),
-    viteCommonjs(),
-    // viteCommonjs({
-    //   exclude: ['vite-dev-demo-sheldon'],
-    // }),
+    reactRefresh({
+      include: 'src/*.tsx',
+    }),
+    viteCommonjs({
+      exclude: ['@react-refresh'],
+    }),
   ]
 })

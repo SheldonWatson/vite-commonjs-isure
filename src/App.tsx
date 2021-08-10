@@ -4,10 +4,12 @@ import logo from './logo.svg'
 import './App.css'
 // import Search from '@material-ui/icons/Search'
 
-const Search =  React.lazy(() => import('@material-ui/icons/Search'))
+// const Search =  React.lazy(() => import('@material-ui/icons/Search'))
+const Child =  React.lazy(() => import('./child'))
 function App() {
   const [count, setCount] = useState(0)
-  console.log(Search, 'Search')
+  // console.log(Search, 'Search')
+  console.log(Child, 'Child')
 
   return (
     <div className="App">
@@ -44,7 +46,8 @@ function App() {
       </header>
       <img src={img} />
       <Suspense fallback=''>
-        <Search />
+        {/* <Search /> */}
+        <Child />
       </Suspense>
     </div>
   )
